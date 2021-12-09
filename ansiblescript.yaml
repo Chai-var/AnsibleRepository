@@ -34,6 +34,6 @@
   - name: copying war file from host to remote server
     become: true 
     copy:
-      src : ~/var/lib/jenkins/workspace/Webapp/webapp/target/webapp.war
+      src : /var/lib/jenkins/workspace/webapp/webapp/target/webapp.war
       dest : /home/ec2-user/tar/tomcat/webapps
       remote_src : no
