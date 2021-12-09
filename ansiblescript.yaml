@@ -28,12 +28,12 @@
   #- name : Renaming tomcat home
     #command : mv /home/ec2-user/tar/apache-tomcat-8.5.73 /home/ec2-user/tar/tomcat
   - name : Starting tomcat
-    shell : nohup /home/ec2-user/tar/tomcat/bin/startup.sh &
+    shell : nohup /home/ec2-user/tar/apache-tomcat-8.5.73/bin/startup.sh &
   - name: Delete old war  
-    command: rm -rf /home/ec2-user/tar/tomcat/webapps/*.war
+    command: rm -rf /home/ec2-user/tar/apache-tomcat-8.5.73/webapps/*.war
   - name: copying war file from host to remote server
     become: true 
     copy:
       src : /var/lib/jenkins/workspace/Java-Maven/webapp/target/webapp.war
-      dest : /home/ec2-user/tar/tomcat/webapps
+      dest : /home/ec2-user/tar/apache-tomcat-8.5.73/webapps
       remote_src : no
