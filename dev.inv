@@ -1,2 +1,2 @@
 [webservers]
-35.87.156.227 ansible_user=ec2-user
+35.161.220.232 ansible_user=ec2-user
